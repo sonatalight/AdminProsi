@@ -8,17 +8,16 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-<<<<<<< HEAD:Page/ListPartner.php
-		<?php
-        	include "../GenericPage/Header.php";
-=======
         <?php
->>>>>>> origin/master:Page/ListPartner.php
 			include "../GenericPage/PageCss.php";
 			include "../GenericPage/Query.php";
         ?>
-   </head>
+   
+    </head>
     <body>
+        <?php
+         include "../GenericPage/Header.php";  
+        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -43,9 +42,6 @@ and open the template in the editor.
 										$row = get("partner","select * from Partner");
 										for($i = 0; $i < sizeof($row) ; $i++){
 <<<<<<< HEAD:Page/ListPartner.php
-=======
-<<<<<<< HEAD:Page/ListPartner.php
->>>>>>> origin/master:Page/ListPartner.php
 										echo "<tr>";
 											$id = $row[$i]["Id_Partner"];
 											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
@@ -54,8 +50,6 @@ and open the template in the editor.
 											echo "<td>"; 
 											for($j = 0; $j < sizeof($telp) ; $j++){
 												echo $telp[$j]["No_Telepon"]. " ";
-<<<<<<< HEAD:Page/ListPartner.php
-=======
 =======
 											$id = $row[$i]["Id_Partner"];
 											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
@@ -65,7 +59,6 @@ and open the template in the editor.
 											for($j = 0; $j < sizeof($telp) ; $j++){
 												echo $telp[j]. " ";
 >>>>>>> origin/master:Page/ListPartner.php
->>>>>>> origin/master:Page/ListPartner.php
 											}												
 											echo "</td>";
 											echo "<td>" .$row[$i]["Email"]. "</td>";
@@ -74,10 +67,6 @@ and open the template in the editor.
 <<<<<<< HEAD:Page/ListPartner.php
 											echo"</tr>";
 =======
-<<<<<<< HEAD:Page/ListPartner.php
-											echo"</tr>";
-=======
->>>>>>> origin/master:Page/ListPartner.php
 >>>>>>> origin/master:Page/ListPartner.php
 										}
 										?>
