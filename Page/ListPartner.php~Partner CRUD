@@ -41,7 +41,6 @@ and open the template in the editor.
 										<?php
 										$row = get("partner","select * from Partner");
 										for($i = 0; $i < sizeof($row) ; $i++){
-<<<<<<< HEAD:Page/ListPartner.php
 										echo "<tr>";
 											$id = $row[$i]["Id_Partner"];
 											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
@@ -50,24 +49,12 @@ and open the template in the editor.
 											echo "<td>"; 
 											for($j = 0; $j < sizeof($telp) ; $j++){
 												echo $telp[$j]["No_Telepon"]. " ";
-=======
-											$id = $row[$i]["Id_Partner"];
-											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
-											echo "<td>" .$row[$i]["Nama_Partner"]. "</td>";
-											$telp = get("telpPartner","select No_Telepon from TelpPartner where Id_Partner = " .$id);					
-											echo "<td>"; 
-											for($j = 0; $j < sizeof($telp) ; $j++){
-												echo $telp[j]. " ";
->>>>>>> origin/master:Page/ListPartner.php
 											}												
 											echo "</td>";
 											echo "<td>" .$row[$i]["Email"]. "</td>";
 											echo "<td>" .$row[$i]["Alamat"]. "</td>";
 											echo "<td>" .$row[$i]["Id_Kota"]. "</td>";
-<<<<<<< HEAD:Page/ListPartner.php
 											echo"</tr>";
-=======
->>>>>>> origin/master:Page/ListPartner.php
 										}
 										?>
                                     </tbody>

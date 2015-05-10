@@ -33,22 +33,36 @@
 		$result = array();
 				
 		if($type == "partner"){
+<<<<<<< HEAD
 			$id = "Id_Partner";
 			$array = $PARTNER_ARRAY;
 		}else if($type == "telpPartner"){
 			$id = "Id_Partner";
 			$array = array("Id_Partner","No_Telepon");
+=======
+			$id = "id_partner";
+			$array = $PARTNER_ARRAY;
+>>>>>>> origin/master
 		}
 		
 		$arrayres = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_assoc($arrayres)){
 				$curr = $row[$id];
+<<<<<<< HEAD
 				for($j = 0; $j< sizeof($array); $j++){
 					if($array[$j] == "id_kota"){
 						$result[$i][$array[$j]] = mysqli_fetch_row(mysqli_query($conn,"select Nama_Kota from `Kota` where Id_Kota = '".$row[$array[$j]]."'"));
 					}
 					else{
 						$result[$i][$array[$j]] = $row[$array[$j]];
+=======
+				for($j = 0; $i< sizeof($array); $j++){
+					if($array[$j] == "id_kota"){
+						$result[$i][$array[$j]] = mysqli_fetch_row(mysqli_query($conn,"select Nama_Kota from `Kota` where Id_Kota = '".$row[$j]."'"));
+					}
+					else{
+						$result[$i][$array[$j]] = $row[$j];
+>>>>>>> origin/master
 					}
 				}
 				$i++;		
@@ -64,6 +78,7 @@
 		
 		if($type == "partner"){
 			
+<<<<<<< HEAD
 			$id = getSingleValue("SELECT max(`Id_Partner`) as maxid FROM Partner");
 			$id++;
 			
@@ -75,11 +90,25 @@
 	}
 	
 	function getSingleValue($sql, $field="maxid") {
+=======
+			$id = getSingleValue($conn,"SELECT max(`Id_Partner`) as maxid FROM Partner");
+			$id++;
+			
+			$sql = "INSERT INTO `partner`(`Id_Partner`, `Rekening`, `Nama_Partner`, `Password`, `Alamat`, `Email`, `Id_Kota`) VALUES ('".$id."','" .$data[0]. "','" .$data[1]. "','" .$data[2]. "','" .$data[3]. "','" .$data[4]. "','" .$data[5]. "')";
+			mysqli_query($conn,$sql);
+			return true;
+			 
+		}
+	}
+	
+	function getSingleValue($conn, $sql, $field="maxid") {
+>>>>>>> origin/master
 		
 		global $conn;	
 		$result = mysqli_fetch_assoc(mysqli_query($conn,$sql));
 		return $result[$field];
 	}	
+<<<<<<< HEAD
 	
 	function runSQL($sql) {
 		
@@ -87,4 +116,6 @@
 		mysqli_query($conn,$sql);
 		return true;
 	}	
+=======
+>>>>>>> origin/master
 ?>
