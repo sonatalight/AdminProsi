@@ -8,17 +8,21 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <?php
+<<<<<<< HEAD:Page/ListPartner.php
+		<?php
         	include "../GenericPage/Header.php";
+=======
+        <?php
+>>>>>>> origin/master:Page/ListPartner.php
 			include "../GenericPage/PageCss.php";
 			include "../GenericPage/Query.php";
-        ?>   
-    </head>
+        ?>
+   </head>
     <body>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">List Event</h1>
+                    <h1 class="page-header">List Partner</h1>
                    
                 </div>
                  <div class="panel-body">
@@ -26,31 +30,55 @@ and open the template in the editor.
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-											<th>Id Event</th>
-                                            <th>Nama Event</th>
+											<th>Id_Partner</th>
                                             <th>Nama Partner</th>
-											<th>Tanggal</th>
-											<th>Waktu</th>
-                                            <th>Kota</th>
-                                            <th>Status</th>												
+                                            <th>No Telepon</th>
+                                            <th>Email</th>
+                                            <th>Alamat</th>
+                                            <th>Kota</th>                                          
                                         </tr>
                                     </thead>
                                     <tbody>
 										<?php
-										$row = get("event","select * from Event");
+										$row = get("partner","select * from Partner");
 										for($i = 0; $i < sizeof($row) ; $i++){
+<<<<<<< HEAD:Page/ListPartner.php
+=======
+<<<<<<< HEAD:Page/ListPartner.php
+>>>>>>> origin/master:Page/ListPartner.php
 										echo "<tr>";
-											$id = $row[$i]["Id_Event"];
-											echo "<td>" .$row[$i]["Id_Event"]. "</td>";
-											echo "<td>" .$row[$i]["Nama_Event"]. "</td>";		
+											$id = $row[$i]["Id_Partner"];
 											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
-											echo "<td>" .$row[$i]["Tanggal_Mulai"]. "-".$row[$i]["Tanggal_Selesai"]." </td>";
-											echo "<td>" .$row[$i]["Jam_Mulai"]. "-".$row[$i]["Jam_Selesai"]." </td>";
-											echo "<td>" .$row[$i]["Id_Kota"]. "</td>";
+											echo "<td>" .$row[$i]["Nama_Partner"]. "</td>";
+											$telp = get("telpPartner","select * from TelpPartner where Id_Partner = " .$id);					
 											echo "<td>"; 
-											if($row[$i]["Status"]==0){echo "PENDING";}else{echo "APPROVED";} 
+											for($j = 0; $j < sizeof($telp) ; $j++){
+												echo $telp[$j]["No_Telepon"]. " ";
+<<<<<<< HEAD:Page/ListPartner.php
+=======
+=======
+											$id = $row[$i]["Id_Partner"];
+											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
+											echo "<td>" .$row[$i]["Nama_Partner"]. "</td>";
+											$telp = get("telpPartner","select No_Telepon from TelpPartner where Id_Partner = " .$id);					
+											echo "<td>"; 
+											for($j = 0; $j < sizeof($telp) ; $j++){
+												echo $telp[j]. " ";
+>>>>>>> origin/master:Page/ListPartner.php
+>>>>>>> origin/master:Page/ListPartner.php
+											}												
 											echo "</td>";
+											echo "<td>" .$row[$i]["Email"]. "</td>";
+											echo "<td>" .$row[$i]["Alamat"]. "</td>";
+											echo "<td>" .$row[$i]["Id_Kota"]. "</td>";
+<<<<<<< HEAD:Page/ListPartner.php
 											echo"</tr>";
+=======
+<<<<<<< HEAD:Page/ListPartner.php
+											echo"</tr>";
+=======
+>>>>>>> origin/master:Page/ListPartner.php
+>>>>>>> origin/master:Page/ListPartner.php
 										}
 										?>
                                     </tbody>
@@ -80,18 +108,12 @@ and open the template in the editor.
         
         if(Logintype == "1"){
             $("#1").hide();
-            $("#3").hide();
-            
-            
+            $("#3").hide();     
         }else if(Logintype == "2"){
             
             $("#4").hide();
-            $("#5").hide();
-            
-            
-        }
-        
-        
+            $("#5").hide();       
+        } 
         </script>
     </body>
 </html>

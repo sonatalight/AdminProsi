@@ -146,10 +146,10 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a id="1" href="RegisterPatner.php"><i class="fa fa-dashboard fa-fw"></i> Register Partner</a>
+                            <a id="1" href="RegisterPartner.php"><i class="fa fa-dashboard fa-fw"></i> Register Partner</a>
                         </li>
                          <li>
-                            <a id="2" href="ListPatner.php"><i class="fa fa-dashboard fa-fw"></i> List Partner</a>
+                            <a id="2" href="ListPartner.php"><i class="fa fa-dashboard fa-fw"></i> List Partner</a>
                         </li>
                          <li>
                             <a  id="3" href="ListFeedback.php"><i class="fa fa-dashboard fa-fw"></i> List Feedback</a>
@@ -157,7 +157,7 @@
                          <li>
                             <a  id="4" href="ListEvent.php"><i class="fa fa-dashboard fa-fw"></i> List Event</a>
                         </li>
-                         <li>
+                        <li>
                             <a id="5" href="ListTicket.php"><i class="fa fa-dashboard fa-fw"></i> List Ticket</a>
                         </li>
                         
