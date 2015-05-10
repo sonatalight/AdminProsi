@@ -20,32 +20,11 @@ and open the template in the editor.
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Register Patner</h1>
+                    <h1 class="page-header">Register Partner</h1>
                     <form role="form">
                         <div class="form-group">
                             <div class="table-responsive">
                                 <table class="table">
-                                <tr>
-                                    <th>
-                                        <label>ID Partner </label>
-                                    </th>
-                                    <th>
-                                        <input class="form-control" id="RegisterID" type="text" placeholder="" disabled>
-                                    </th>
-                                    <th>
-                                        <button class="btn btn-default">Generate ID</button>
-                                    </th>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <label>ID Rekening</label>
-                                    </th>
-                                    <th>
-                                        <input class="form-control" id="RekeningID" type="text" placeholder="" >
-                                    </th>
-                                   
-                                </tr>
                                 <tr>
                                     <th>
                                         <label>Name Partner</label>
@@ -57,67 +36,67 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <th>
-                                        <label>Alamat Partner</label>
+                                        <label>No Rekening</label>
+                                    </th>
+                                    <th>
+                                        <input class="form-control" id="RekeningID" type="text" placeholder="" >
+                                    </th>                                   
+                                </tr>
+								<tr>
+                                    <th>
+                                        <label>Password</label>
+                                    </th>
+                                    <th>
+                                        <input class="form-control" id="RekeningID" type="password" placeholder="" >
+                                    </th>                                   
+                                </tr>                                         
+                                <tr>
+                                    <th>
+                                        <label>Alamat</label>
                                     </th>
                                     <th>
                                        <textarea class="form-control" rows="3"></textarea>
+                                    </th>                                   
+                                </tr>
+								 <tr>
+                                    <th>
+                                        <label>Email</label>
                                     </th>
-                                   
+                                    <th>
+                                       <input class="form-control" id="RekeningID" type="text" placeholder="">
+                                    </th>                                   
                                 </tr>
                                 <tr>
                                     <th>
-                                        <label>NO Cp Partner</label>
+                                        <label>Telepon</label>
                                     </th>
                                     <th>
-                                        <input class="form-control" id="NamaPartner" type="text" placeholder="" >
-                                    </th>
-                                   
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <label>Email Partner</label>
-                                    </th>
-                                    <th>
-                                        <input class="form-control" id="EmailPartner" type="email" placeholder="" >
-                                    </th>
-                                   
-                                </tr>
+                                        <input class="form-control" id="TelpPartner" type="text" placeholder="" >
+                                    </th>                                   
+                                </tr>                               
                                 <tr>
                                     <th>
                                         <label>Kota Partner</label>
                                     </th>
                                     <th>
-                                       <select class="form-control">
-                                                
-                                                <option>bandung</option>
-                                                <option>jakarta</option>
-                                                <option>jogja</option>
+                                       <select class="form-control">                                                
+                                                <option>Bandung</option>
+                                                <option>Jakarta</option>
+                                                <option>Jogja</option>
                                                 <option>Semarang</option>
-                                                <option>bali</option>
                                             </select>
-                                    </th>
-                                   
+                                    </th>                                   
                                 </tr>
                                  <tr>
-                                    <th>
-                                        
+                                    <th>                                        
                                     </th>
-                                    <th>
-                                        
-                                        <button type="submit" class="btn btn-default pull-right">Register Patner</button>
-                                    </th>
-                                   
-                                </tr>
-                                
-                                
-                                
-                                
+                                    <th>                                        
+                                        <button type="submit" class="btn btn-default pull-right">Register Partner</button>
+                                    </th>                                   
+                                </tr>                       
                             </table>
                             </div>
-                        </div>
-                    
-                    
-                    
+                        </div>            
                     </form>
                 </div>
             </div>
