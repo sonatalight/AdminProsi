@@ -9,7 +9,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <?php
-        include "../GenericPage/PageCss.php";
+			include "../GenericPage/PageCss.php";
+			include "../GenericPage/Query.php";
         ?>
    
     </head>
@@ -20,7 +21,7 @@ and open the template in the editor.
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">List Patner</h1>
+                    <h1 class="page-header">List Partner</h1>
                    
                 </div>
                  <div class="panel-body">
@@ -28,18 +29,32 @@ and open the template in the editor.
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Nama Patner</th>
-                                            <th>ID Patner</th>
-                                            <th>No Cp</th>
+											<th>Id_Partner</th>
+                                            <th>Nama Partner</th>
+                                            <th>No Telepon</th>
                                             <th>Email</th>
-                                            <th>Kota</th>
-                                            <th>Status</th>
-                                            <th>view</th>
-                                            
+                                            <th>Alamat</th>
+                                            <th>Kota</th>                                          
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      
+										<?php
+										$row = get("partner","select * from Partner");
+										for($i = 0; $i < sizeof($row) ; $i++){
+											$id = $row[$i]["Id_Partner"];
+											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
+											echo "<td>" .$row[$i]["Nama_Partner"]. "</td>";
+											$telp = get("telpPartner","select No_Telepon from TelpPartner where Id_Partner = " .$id);					
+											echo "<td>"; 
+											for($j = 0; $j < sizeof($telp) ; $j++){
+												echo $telp[j]. " ";
+											}												
+											echo "</td>";
+											echo "<td>" .$row[$i]["Email"]. "</td>";
+											echo "<td>" .$row[$i]["Alamat"]. "</td>";
+											echo "<td>" .$row[$i]["Id_Kota"]. "</td>";
+										}
+										?>
                                     </tbody>
                                 </table>
                             </div>
@@ -67,18 +82,12 @@ and open the template in the editor.
         
         if(Logintype == "1"){
             $("#1").hide();
-            $("#3").hide();
-            
-            
+            $("#3").hide();     
         }else if(Logintype == "2"){
             
             $("#4").hide();
-            $("#5").hide();
-            
-            
-        }
-        
-        
+            $("#5").hide();       
+        } 
         </script>
     </body>
 </html>
