@@ -8,19 +8,17 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <?php
-        include "../GenericPage/PageCss.php";
+		<?php
+        	include "../GenericPage/Header.php";
+			include "../GenericPage/PageCss.php";
+			include "../GenericPage/Query.php";
         ?>
-   
     </head>
     <body>
-        <?php
-         include "../GenericPage/Header.php";  
-        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">List T</h1>
+                    <h1 class="page-header">List Tiket</h1>
                    
                 </div>
                  <div class="panel-body">
@@ -29,16 +27,24 @@ and open the template in the editor.
                                     <thead>
                                         <tr>
                                             <th>Nama Event</th>
-                                            <th>Nama Patner</th>
                                             <th>Class</th>
-                                            <th>Tanggal</th>
-                                            <th>Status</th>
-                                             <th>harga</th>
-                                            <th>view</th>
-                                            
+                                            <th>Harga</th>
+                                            <th>Kuota</th>                                            
                                         </tr>
                                     </thead>
-                                   
+									<tbody>
+									<?php
+										$row = get("tiket","select * from JenisTiket");
+										for($i = 0; $i < sizeof($row) ; $i++){
+										echo "<tr>";
+											$id = $row[$i]["Id_JenisTiket"];
+											echo "<td>" .$row[$i]["Id_Event"]. "</td>";
+											echo "<td>" .$row[$i]["Tipe"]. "</td>";
+											echo "<td>" .$row[$i]["Harga"]. "</td>";
+											echo "<td>" .$row[$i]["Kuota"]. "</td>";
+											echo"</tr>";
+										}
+										?>
                                     </tbody>
                                 </table>
                             </div>

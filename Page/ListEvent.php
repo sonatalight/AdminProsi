@@ -9,14 +9,12 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <?php
-        include "../GenericPage/PageCss.php";
-        ?>
-   
+        	include "../GenericPage/Header.php";
+			include "../GenericPage/PageCss.php";
+			include "../GenericPage/Query.php";
+        ?>   
     </head>
     <body>
-        <?php
-         include "../GenericPage/Header.php";  
-        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -28,17 +26,33 @@ and open the template in the editor.
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Nama Patner</th>
-                                            <th>Nama event</th>
-                                            <th></th>
+											<th>Id Event</th>
+                                            <th>Nama Event</th>
+                                            <th>Nama Partner</th>
+											<th>Tanggal</th>
+											<th>Waktu</th>
                                             <th>Kota</th>
-                                            <th>Status</th>
-                                            <th>view</th>
-                                            
+                                            <th>Status</th>												
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+										<?php
+										$row = get("event","select * from Event");
+										for($i = 0; $i < sizeof($row) ; $i++){
+										echo "<tr>";
+											$id = $row[$i]["Id_Event"];
+											echo "<td>" .$row[$i]["Id_Event"]. "</td>";
+											echo "<td>" .$row[$i]["Nama_Event"]. "</td>";		
+											echo "<td>" .$row[$i]["Id_Partner"]. "</td>";
+											echo "<td>" .$row[$i]["Tanggal_Mulai"]. "-".$row[$i]["Tanggal_Selesai"]." </td>";
+											echo "<td>" .$row[$i]["Jam_Mulai"]. "-".$row[$i]["Jam_Selesai"]." </td>";
+											echo "<td>" .$row[$i]["Id_Kota"]. "</td>";
+											echo "<td>"; 
+											if($row[$i]["Status"]==0){echo "PENDING";}else{echo "APPROVED";} 
+											echo "</td>";
+											echo"</tr>";
+										}
+										?>
                                     </tbody>
                                 </table>
                             </div>
